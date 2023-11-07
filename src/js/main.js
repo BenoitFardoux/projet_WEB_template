@@ -1,9 +1,16 @@
 let isBurgerClicked = false;
-const toggleBurgerClicked = () => {
-    isBurgerClicked = !isBurgerClicked;
-}
+let innerBurger = undefined;
 
 window.onload = () => {
     const burger = document.getElementById("menu_burger");
+    innerBurger = document.getElementById("innerBurger");
+
     burger.addEventListener("click", toggleBurgerClicked);
+
+}
+
+
+const toggleBurgerClicked = () => {
+    isBurgerClicked = !isBurgerClicked;
+
 }

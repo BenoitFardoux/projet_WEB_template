@@ -54,10 +54,21 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
     /*grid-column-start:2 ;*/
 }
 
+#searchbar::placeholder{
+    color: #FFF;
+
+    /*text-align: right;*/
+    font-family: Hammersmith One, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
 .search-label {
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+    /*grid-tem  plate-columns: 50% 50%;*/
+    /*grid-template-rows: 100%;*/
     width: 80vw;
 }
 
