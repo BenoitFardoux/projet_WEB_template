@@ -1,21 +1,78 @@
+/*noinspection CssUnknownTarget*/
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
 /**
     color variables
  */
-*{
+* {
     --main-bg-color: #282735;
-    --secondary-bg-color : #373457;
-    --main-text-color : white;
+    --secondary-bg-color: #373457;
+    --main-text-color: white;
 }
 
-html{
+* {
+    color: var(--main-text-color);
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header > div:nth-child(1){
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+input::-moz-focus-outer {
+    border: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+html {
     width: 100%;
     height: 100%;
+    background-color: var(--main-bg-color);
+}
+
+#searchbar {
+    background-color: var(--secondary-bg-color);
+    height: 38px;
+    width: 80vw;
+    padding-left: 2rem;
+}
+
+.search-label {
+    display: grid;
+    align-items: center;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+#menu_burger:hover {
+    cursor: pointer;
+}
+
+.search-icon {
+    margin-left: 10px; /* Vous pouvez ajuster la marge en fonction de vos besoins */
+}
+
+.border {
+    border: 2px solid var(--main-text-color);
+    border-radius: 8px;
 }
 
 @media screen and (max-width: 430px) {
-    html {
-        background-color: var(--main-bg-color);
-    }
 }
 
 
