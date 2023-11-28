@@ -1,22 +1,223 @@
+/*noinspection CssUnknownTarget*/
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
+body {
+    margin: 0;
+    width: 100vw;
+}
+
 /**
     color variables
  */
-*{
+* {
     --main-bg-color: #282735;
-    --secondary-bg-color : #373457;
-    --main-text-color : white;
+    --secondary-bg-color: #3D3B52;
+    --input-bg-color: #373457;
+    --main-text-color: #fff;
+    --title-text-color: #F0F0F0;
+    --primary-ok: #56F966;
 }
 
-html{
+* {
+    color: var(--main-text-color);
+    font-family: 'Hammersmith One', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.header {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+.header > div:nth-child(1) {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+}
+
+input::-moz-focus-outer {
+    border: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+html {
     width: 100%;
     height: 100%;
-}
-
-@media screen and (max-width: 430px) {
-    html {
-        background-color: var(--main-bg-color);
-    }
+    background-color: var(--main-bg-color);
 }
 
 
+/***
+TODO : Reparer logo a l'exterieur de la bare de recherche
+ */
+#searchbar {
+    background-color: var(--input-bg-color);
+    height: 38px;
+    padding-left: 2rem;
+}
 
+#searchbar::placeholder {
+    color: var(--main-text-color);
+
+    /*text-align: right;*/
+    font-family: Hammersmith One, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.search-label {
+    /*display: grid;*/
+    /*grid-tem  plate-columns: 50% 50%;*/
+    /*grid-template-rows: 100%;*/
+    width: 100vw;
+    background-color: var(--secondary-bg-color);
+    padding: 0.5rem 0;
+
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+#menu_burger:hover {
+    cursor: pointer;
+}
+
+.search-icon {
+    margin-left: 10px; /* Vous pouvez ajuster la marge en fonction de vos besoins */
+}
+
+.border {
+    border: 2px solid var(--main-text-color);
+    border-radius: 8px;
+}
+
+img {
+    max-width: 100vw;
+}
+
+#body {
+    margin-left: 1.5rem;
+}
+
+/**
+only for the category container and content
+ */
+.category {
+    overflow: hidden;
+}
+
+.category_name {
+    color: var(--title-text-color);
+    font-size: 2rem;
+    height: 2.125rem;
+    width: 95%;
+    border-bottom: 1px solid var(--main-text-color);
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.category_content {
+    display: flex;
+    /*white-space: nowrap;*/
+    overflow: auto;
+    height: 14.5rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-bottom: 0.2rem;
+}
+
+.category_content > .continue {
+    width: 9.6875rem;;
+    height: 100%;
+    border-radius: 8px 8px 10px 10px;
+    margin-right: 0.5rem;
+    background: url(../assets/images/placeholder.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+.continue > .continue_curse_title {
+    background: linear-gradient(180deg, #26243C 0%, rgba(217, 217, 217, 0.00) 60%);
+    text-align: center;
+    padding-top: 0.5rem;
+    height: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.continue-course-chapter {
+    align-self: flex-end;
+    z-index: 20000;
+    background-color: var(--input-bg-color);
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    text-align: right;
+}
+
+.curse-name {
+    background-color: var(--input-bg-color);
+    text-align: center;
+    border-radius: 0.5rem;
+    padding-top: 0.5em;
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+
+}
+
+.curse-price {
+    display: flex;
+    color: black;
+    text-align: center;
+    width: 4.24306rem;
+    height: 2.4375rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: var(--primary-ok);
+    align-self: flex-end;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.buy-curse {
+    text-decoration: none;
+    width: 23.5rem;
+    height: 100%;
+    border-radius: 8px 8px 10px 10px;
+    margin-right: 0.5rem;
+    background: url(../assets/svg/curse.svg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
