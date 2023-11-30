@@ -139,7 +139,7 @@ only for the category container and content
     width: 95%;
     border-bottom: 1px solid var(--main-text-color);
     margin-top: 1.25rem;
-    margin-bottom: 1.5rem;
+    /*margin-bottom: 1.5rem;*/
 }
 
 .category_content {
@@ -151,6 +151,9 @@ only for the category container and content
     flex-direction: column;
     align-content: flex-start;
     padding-bottom: 0.2rem;
+    scroll-snap-type: x mandatory ;
+    margin-top : 1.5rem
+
 }
 
 .category_content > .continue {
@@ -164,6 +167,7 @@ only for the category container and content
     flex-direction: column;
     text-decoration: none;
     justify-content: space-between;
+    scroll-snap-align: start end;
 }
 
 .continue > .continue_curse_title {
