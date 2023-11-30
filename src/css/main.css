@@ -3,7 +3,6 @@
 
 body {
     margin: 0;
-    width: 100vw;
 }
 
 /**
@@ -14,6 +13,7 @@ body {
     --secondary-bg-color: #3D3B52;
     --input-bg-color: #373457;
     --main-text-color: #fff;
+    --secondary-text-color: #6e6c7d;
     --title-text-color: #F0F0F0;
     --primary-ok: #56F966;
 }
@@ -36,12 +36,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
 }
 
 header > div:nth-child(1) {
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -73,9 +72,10 @@ html {
 TODO : Reparer logo a l'exterieur de la bare de recherche
  */
 #searchbar {
-    background-color: var(--input-bg-color);
-    height: 38px;
-    padding-left: 2rem;
+    background: none;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
 }
 
 #searchbar::placeholder {
@@ -83,20 +83,24 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
 
     /*text-align: right;*/
     font-family: Hammersmith One, sans-serif;
-    font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    color: var(--secondary-text-color);
+}
+
+.search-container{
+    width: calc(100% );
+    background-color: var(--secondary-bg-color);
+    padding: 0.5rem 0;
 }
 
 .search-label {
-    /*display: grid;*/
-    /*grid-tem  plate-columns: 50% 50%;*/
-    /*grid-template-rows: 100%;*/
-    width: 100vw;
-    background-color: var(--secondary-bg-color);
-    padding: 0.5rem 0;
-
+    background-color: var(--input-bg-color);
+    margin: 0.5rem 0.5rem;
+    padding: 0.25rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr min-content;
 }
 
 .hidden {
@@ -113,7 +117,6 @@ button {
 }
 
 .search-icon {
-    margin-left: 10px; /* Vous pouvez ajuster la marge en fonction de vos besoins */
 }
 
 .border {
