@@ -58,6 +58,10 @@ input::-moz-focus-inner {
     border: 0;
 }
 
+input:focus{
+    outline: none;
+}
+
 html {
     width: 100%;
     height: 100%;
