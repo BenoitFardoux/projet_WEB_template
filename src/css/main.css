@@ -6,7 +6,7 @@ body {
     width: 100vw;
 }
 
-/**
+/*
     color variables
  */
 * {
@@ -32,12 +32,21 @@ h1 {
 }
 
 header {
-    margin-top: 4rem;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: sticky;
+    top : 0;
+    background-color: var(--main-bg-color);
     width: 100vw;
 }
+
+
+aside{
+    align-self: center;
+}
+
 
 header > div:nth-child(1) {
     display: flex;
@@ -100,7 +109,7 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 button {
@@ -187,7 +196,7 @@ only for the category container and content
 
 .continue-course-chapter {
     align-self: flex-end;
-    z-index: 20000;
+    /*z-index: 2;*/
     background-color: var(--input-bg-color);
     width: 100%;
     border-radius: 0 0 8px 8px;
@@ -201,11 +210,7 @@ only for the category container and content
     padding-top: 0.5em;
     padding-bottom: 0.5rem;
     font-size: 1.25rem;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-
+    border-radius: 0.5rem;
 }
 
 .curse-price {
@@ -235,4 +240,55 @@ only for the category container and content
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+
+
+@keyframes slideOpen {
+    0%{
+        translate: -100%;
+    }
+
+    100%{
+        translate: 0;
+    }
+}
+
+@keyframes slideClose {
+    0% {
+        translate: 0;
+    }
+
+    100%{
+        translate: -100%;
+    }
+}
+
+.animateSlideOpen{
+    animation: slideOpen 1s cubic-bezier(.27,0,0,.95);
+}
+
+.animateSlideClose{
+    animation: slideClose 1s cubic-bezier(.27,0,0,.95);
+}
+
+#innerBurger{
+    position: fixed;
+    top: 7vh;
+    /*bottom: 100%;*/
+    width: 100vw;
+    background-color: red;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.burger-category{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid black;
 }
