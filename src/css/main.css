@@ -3,7 +3,6 @@
 
 body {
     margin: 0;
-    width: 100vw;
 }
 
 /*
@@ -14,6 +13,7 @@ body {
     --secondary-bg-color: #3D3B52;
     --input-bg-color: #373457;
     --main-text-color: #fff;
+    --secondary-text-color: #6e6c7d;
     --title-text-color: #F0F0F0;
     --primary-ok: #56F966;
 }
@@ -32,6 +32,8 @@ h1 {
 }
 
 header {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
@@ -51,7 +53,7 @@ aside{
 header > div:nth-child(1) {
     display: flex;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -83,9 +85,10 @@ html {
 TODO : Reparer logo a l'exterieur de la bare de recherche
  */
 #searchbar {
-    background-color: var(--input-bg-color);
-    height: 38px;
-    padding-left: 2rem;
+    background: none;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
 }
 
 #searchbar::placeholder {
@@ -93,20 +96,24 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
 
     /*text-align: right;*/
     font-family: Hammersmith One, sans-serif;
-    font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    color: var(--secondary-text-color);
+}
+
+.search-container{
+    width: calc(100% );
+    background-color: var(--secondary-bg-color);
+    padding: 0.5rem 0;
 }
 
 .search-label {
-    /*display: grid;*/
-    /*grid-tem  plate-columns: 50% 50%;*/
-    /*grid-template-rows: 100%;*/
-    width: 100vw;
-    background-color: var(--secondary-bg-color);
-    padding: 0.5rem 0;
-
+    background-color: var(--input-bg-color);
+    margin: 0.5rem 0.5rem;
+    padding: 0.25rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr min-content;
 }
 
 .hidden {
@@ -114,7 +121,7 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
 }
 
 button {
-    background-color: transparent;
+    background-color: var(--secondary-bg-color);
     border: none;
 }
 
@@ -123,7 +130,6 @@ button {
 }
 
 .search-icon {
-    margin-left: 10px; /* Vous pouvez ajuster la marge en fonction de vos besoins */
 }
 
 .border {
@@ -243,6 +249,46 @@ only for the category container and content
     justify-content: space-between;
 }
 
+main{
+    display: flex;
+    justify-content : center;
+}
+
+.sign_in-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.sign_in-form > * {
+    width: 100%;
+    margin: 0.2rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    background-color: var(--input-bg-color);
+    margin: 0.2rem 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.two_elements-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.sign_in-label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4rem;
+}
+
+.form-button{
+    margin-top: 1rem;
+    width: min-content;
+    padding: 0.4rem;
 
 
 @keyframes slideOpen {
