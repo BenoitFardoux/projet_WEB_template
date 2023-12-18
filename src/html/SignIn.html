@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="../js/main.js"></script>
+
+    <title>Sign In</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div>
+          <img
+            src="../assets/svg/burger_menu.svg"
+            alt="menu burger"
+            id="menu_burger"
+          />
+          <h1>Nom du site</h1>
+        </div>
+        <div>
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
+        </div>
+      </div>
+      <aside id="innerBurger" class="hidden">
+        <!-- TODO : implementer interieur du menu sandwich  -->
+        lorem ipsum dolor sit amet
+      </aside>
+      <div class="search-container">
+        <label for="searchbar" class="search-label border">
+          <input id="searchbar" placeholder="faites une recherche" />
+          <img
+            src="../assets/svg/search_icon.svg"
+            alt="icone de recherche"
+            class="search-icon"
+          />
+        </label>
+      </div>
+    </header>
+    <main>
+      <form action="" method="post" class="sign_in-form">
+        <label for="username" class="sign_in-label">
+          username:
+          <input type="text" class="border" placeholder="username" required />
+        </label>
+
+        <div class="two_elements-grid">
+          <label for="firstName" class="sign_in-label">
+            first name:
+            <input type="text" class="border" placeholder="john" required />
+          </label>
+
+          <label for="lastName" class="sign_in-label">
+            last name:
+            <input type="text" class="border" placeholder="doe" required />
+          </label>
+        </div>
+
+        <label for="email" class="sign_in-label">
+          email:
+          <input
+            type="email"
+            class="border"
+            pattern=".+@.+\..{2,3}$"
+            placeholder="john.doe@email.com"
+            required
+          />
+        </label>
+
+        <label for="password" class="sign_in-label">
+          password:
+          <input
+            type="password"
+            minlength="8"
+            class="border"
+            placeholder="password"
+            required
+          />
+        </label>
+        <button type="submit" class="border form-button">submit</button>
+      </form>
+    </main>
+  </body>
+</html>
