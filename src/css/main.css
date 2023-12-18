@@ -285,11 +285,11 @@ input[type="email"]{
     margin-top: 0.4rem;
 }
 
-.form-button{
+.form-button {
     margin-top: 1rem;
     width: min-content;
     padding: 0.4rem;
-
+}
 
 @keyframes slideOpen {
     0%{
