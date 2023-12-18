@@ -3,6 +3,7 @@
 
 body {
     margin: 0;
+    width: 100vw;
 }
 
 /*
@@ -32,8 +33,6 @@ h1 {
 }
 
 header {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
     padding-top: 1rem;
     display: flex;
     flex-direction: column;
@@ -53,7 +52,7 @@ aside{
 header > div:nth-child(1) {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 100vw;
     justify-content: space-between;
     flex-wrap: wrap;
 }
@@ -96,10 +95,10 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
 
     /*text-align: right;*/
     font-family: Hammersmith One, sans-serif;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: var(--secondary-text-color);
 }
 
 .search-container{
