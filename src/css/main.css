@@ -1,0 +1,341 @@
+/*noinspection CssUnknownTarget*/
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+
+body {
+    margin: 0;
+}
+
+/*
+    color variables
+ */
+* {
+    --main-bg-color: #282735;
+    --secondary-bg-color: #3D3B52;
+    --input-bg-color: #373457;
+    --main-text-color: #fff;
+    --secondary-text-color: #6e6c7d;
+    --title-text-color: #F0F0F0;
+    --primary-ok: #56F966;
+}
+
+* {
+    color: var(--main-text-color);
+    font-family: 'Hammersmith One', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+header {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top : 0;
+    background-color: var(--main-bg-color);
+    width: 100vw;
+}
+
+
+aside{
+    align-self: center;
+}
+
+
+header > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header > div:nth-child(1) > div:nth-child(1) {
+    display: flex;
+}
+
+input::-moz-focus-outer {
+    border: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+input:focus{
+    outline: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-bg-color);
+}
+
+
+/***
+TODO : Reparer logo a l'exterieur de la bare de recherche
+ */
+#searchbar {
+    background: none;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
+}
+
+#searchbar::placeholder {
+    color: var(--main-text-color);
+
+    /*text-align: right;*/
+    font-family: Hammersmith One, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--secondary-text-color);
+}
+
+.search-container{
+    width: calc(100% );
+    background-color: var(--secondary-bg-color);
+    padding: 0.5rem 0;
+}
+
+.search-label {
+    background-color: var(--input-bg-color);
+    margin: 0.5rem 0.5rem;
+    padding: 0.25rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+}
+
+.hidden {
+    display: none !important;
+}
+
+button {
+    background-color: var(--secondary-bg-color);
+    border: none;
+}
+
+#menu_burger:hover {
+    cursor: pointer;
+}
+
+.search-icon {
+}
+
+.border {
+    border: 2px solid var(--main-text-color);
+    border-radius: 8px;
+}
+
+img {
+    max-width: 100vw;
+}
+
+#body {
+    margin-left: 1.5rem;
+}
+
+/**
+only for the category container and content
+ */
+.category {
+    overflow: hidden;
+}
+
+.category_name {
+    color: var(--title-text-color);
+    font-size: 2rem;
+    height: 2.125rem;
+    width: 95%;
+    border-bottom: 1px solid var(--main-text-color);
+    margin-top: 1.25rem;
+    /*margin-bottom: 1.5rem;*/
+}
+
+.category_content {
+    display: flex;
+    /*white-space: nowrap;*/
+    overflow: auto;
+    height: 14.5rem;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-bottom: 0.2rem;
+    scroll-snap-type: x mandatory ;
+    margin-top : 1.5rem
+
+}
+.category_content > a {
+    scroll-snap-align: start end;
+
+}
+
+.category_content > .continue {
+    width: 9.6875rem;;
+    height: 100%;
+    border-radius: 8px 8px 10px 10px;
+    margin-right: 0.5rem;
+    background: url(../assets/images/placeholder.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    justify-content: space-between;
+}
+
+.continue > .continue_curse_title {
+    background: linear-gradient(180deg, #26243C 0%, rgba(217, 217, 217, 0.00) 60%);
+    text-align: center;
+    padding-top: 0.5rem;
+    height: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.continue-course-chapter {
+    align-self: flex-end;
+    /*z-index: 2;*/
+    background-color: var(--input-bg-color);
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    text-align: right;
+}
+
+.curse-name {
+    background-color: var(--input-bg-color);
+    text-align: center;
+    /*border-radius: 0.5rem;*/
+    padding-top: 0.5em;
+    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.curse-price {
+    display: flex;
+    color: black;
+    text-align: center;
+    width: 4.24306rem;
+    height: 2.4375rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: var(--primary-ok);
+    align-self: flex-end;
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.buy-curse {
+    text-decoration: none;
+    width: 23.5rem;
+    height: 100%;
+    border-radius: 1rem 1rem 10px 10px;
+    margin-right: 0.5rem;
+    background: url(../assets/svg/curse.svg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main{
+    display: flex;
+    justify-content : center;
+}
+
+.sign_in-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.sign_in-form > * {
+    width: 100%;
+    margin: 0.2rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+    background-color: var(--input-bg-color);
+    margin: 0.2rem 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.two_elements-grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.sign_in-label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.4rem;
+}
+
+.form-button{
+    margin-top: 1rem;
+    width: min-content;
+    padding: 0.4rem;
+
+
+@keyframes slideOpen {
+    0%{
+        translate: -100%;
+    }
+
+    100%{
+        translate: 0;
+    }
+}
+
+@keyframes slideClose {
+    0% {
+        translate: 0;
+    }
+
+    100%{
+        translate: -100%;
+    }
+}
+
+.animateSlideOpen{
+    animation: slideOpen 1s cubic-bezier(.27,0,0,.95);
+}
+
+.animateSlideClose{
+    animation: slideClose 1s cubic-bezier(.27,0,0,.95);
+}
+
+#innerBurger{
+    position: fixed;
+    top: 7vh;
+    /*bottom: 100%;*/
+    width: 100vw;
+    background-color: red;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.burger-category{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid black;
+}
