@@ -33,7 +33,7 @@ h1 {
 }
 
 header {
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -320,7 +320,7 @@ input[type="email"]{
 
 #innerBurger{
     position: fixed;
-    top: 7vh;
+    top: 5vh;
     /*bottom: 100%;*/
     width: 100vw;
     background-color: red;
