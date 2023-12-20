@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/Cours.css" />
+    <script src="../js/menu_burger.js"></script>
+    <script src="../js/Cours.js"></script>
+
+    <title>Template e-learning</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <aside id="menu_burger">
+          <img src="../assets/svg/burger_menu.svg" alt="menu burger" />
+        </aside>
+        <h1>Nom du site</h1>
+        <div>
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
+        </div>
+      </div>
+    </header>
+    <div class="search-container">
+      <label for="searchbar" class="search-label border">
+        <input id="searchbar" placeholder="faites une recherche" />
+        <img
+          src="../assets/svg/search_icon.svg"
+          alt="icone de recherche"
+          class="search-icon"
+        />
+      </label>
+    </div>
+    <div id="innerBurger" class="hidden"></div>
+    <main class="column-flex">
+      <section class="lesson">
+        <img src="../assets/images/background_image.png" />
+        <aside class="lesson-chapter">
+          <ul class="chapter-group" id="chapter"></ul>
+        </aside>
+      </section>
+      <section id="content"></section>
+    </main>
+  </body>
+</html>
