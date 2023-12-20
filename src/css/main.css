@@ -33,7 +33,7 @@ h1 {
 }
 
 header {
-    margin-top: 2rem;
+    margin-top: 0;
     margin-bottom: 1rem;
     padding-top: 1rem;
     display: flex;
