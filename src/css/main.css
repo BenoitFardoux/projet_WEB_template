@@ -339,3 +339,7 @@ input[type="email"]{
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+.column-flex {
+    flex-direction: column;
+}
