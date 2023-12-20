@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/signOn.css" />
     <script src="../js/main.js"></script>
+    <script src="../js/signOn.js"></script>
 
-    <title>Sign In</title>
+    <title>Sign On</title>
   </head>
   <body>
     <header>
@@ -41,27 +43,51 @@
       </div>
     </header>
     <main>
-      <form action="" method="post" class="sign_in-form">
-        <label for="username" class="sign_in-label">
+      <form
+        action="../../index.html"
+        method="post"
+        class="sign_on-form"
+        id="sign_on"
+      >
+        <label for="username" class="sign_on-label">
           username:
-          <input type="text" class="border" placeholder="username" required />
+          <input
+            name="username"
+            type="text"
+            class="border"
+            placeholder="username"
+            required
+          />
         </label>
 
         <div class="two_elements-grid">
-          <label for="firstName" class="sign_in-label">
+          <label for="firstName" class="sign_on-label">
             first name:
-            <input type="text" class="border" placeholder="john" required />
+            <input
+              name="firstName"
+              type="text"
+              class="border"
+              placeholder="john"
+              required
+            />
           </label>
 
-          <label for="lastName" class="sign_in-label">
+          <label for="lastName" class="sign_on-label">
             last name:
-            <input type="text" class="border" placeholder="doe" required />
+            <input
+              name="lastName"
+              type="text"
+              class="border"
+              placeholder="doe"
+              required
+            />
           </label>
         </div>
 
-        <label for="email" class="sign_in-label">
+        <label for="email" class="sign_on-label">
           email:
           <input
+            name="email"
             type="email"
             class="border"
             pattern=".+@.+\..{2,3}$"
@@ -70,17 +96,32 @@
           />
         </label>
 
-        <label for="password" class="sign_in-label">
+        <label for="password" class="sign_on-label">
           password:
           <input
+            name="password"
+            id="password"
             type="password"
             minlength="8"
             class="border"
             placeholder="password"
+            pattern=".*((\d.*[A-Z])|([A-Z].*\d)).*"
+            title="Need an uppercase and a digit"
             required
           />
+          <label class="sign_on-checkbox-label">
+            show password
+            <span class="checkbox-container">
+              <input type="checkbox" oninput="showPassword()" />
+              <span class="checkmark"></span>
+            </span>
+          </label>
         </label>
-        <button type="submit" class="border form-button">submit</button>
+        <label for="submit" class="sign_on-label label-center">
+          <button name="submit" type="submit" class="border form-button">
+            submit
+          </button>
+        </label>
       </form>
     </main>
   </body>
