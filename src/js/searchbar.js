@@ -1,5 +1,6 @@
 let dialog = document.getElementById("search-dialog")
-let searchDialogConatiner = document.getElementById("search-dialog-container")
+let searchbar = document.getElementById("searchbar")
+
 
 const mockedSearchResult = [{
     title : 'cours 1', link : 'www.google.com'
@@ -29,10 +30,17 @@ const searchItem = (critereDeRecherche) => {
 }
 
 dialog.addEventListener("input",(event) => {
-    if (searchTimeOut !== null)
+    dialog.classList.remove('centered-dialog')
+    dialog.classList.add('writing-dialog')
+    if (searchTimeOut !== null) {
         clearTimeout(searchTimeOut)
-    if (event.target.value !== "")
+    }
+    if (event.target.value !== "") {
         searchTimeOut = setTimeout(() => {
             console.log(searchItem(event.target.value))
-        },200)
+        }, 200)
+    } else {
+        dialog.classList.remove('writing-dialog')
+        dialog.classList.add('centered-dialog')
+    }
 })

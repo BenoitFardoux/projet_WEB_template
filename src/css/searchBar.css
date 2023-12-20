@@ -1,5 +1,10 @@
 @import "variables.css";
 
+#search-dialog{
+    position: fixed;
+    left: 50%;
+
+}
 
 #searchbar {
     background: none;
@@ -40,4 +45,16 @@
     opacity: 30%;
     width: 100%;
     height: 100%;
+}
+
+.centered-dialog{
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.writing-dialog{
+    top: 20%;
+    transform: translate(-50%, -50%);
+
 }
