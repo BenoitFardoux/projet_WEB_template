@@ -3,6 +3,7 @@
 
 body {
     margin: 0;
+    width: 100%;
 }
 
 /*
@@ -32,16 +33,14 @@ h1 {
 }
 
 header {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
     display: flex;
     flex-direction: column;
     align-items: center;
     position: sticky;
     top : 0;
     background-color: var(--main-bg-color);
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -81,9 +80,6 @@ html {
 }
 
 
-/***
-TODO : Reparer logo a l'exterieur de la bare de recherche
- */
 #searchbar {
     background: none;
     height: 100%;
@@ -96,10 +92,10 @@ TODO : Reparer logo a l'exterieur de la bare de recherche
 
     /*text-align: right;*/
     font-family: Hammersmith One, sans-serif;
+    font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: var(--secondary-text-color);
 }
 
 .search-container{
@@ -285,11 +281,11 @@ input[type="email"]{
     margin-top: 0.4rem;
 }
 
-.form-button{
+.form-button {
     margin-top: 1rem;
     width: min-content;
     padding: 0.4rem;
-
+}
 
 @keyframes slideOpen {
     0%{
@@ -321,7 +317,7 @@ input[type="email"]{
 
 #innerBurger{
     position: fixed;
-    top: 7vh;
+    top: 5vh;
     /*bottom: 100%;*/
     width: 100vw;
     background-color: red;
