@@ -1,6 +1,6 @@
 /*noinspection CssUnknownTarget*/
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
-
+@import "variables.css";
 body {
     margin: 0;
     width: 100%;
@@ -9,15 +9,7 @@ body {
 /*
     color variables
  */
-* {
-    --main-bg-color: #282735;
-    --secondary-bg-color: #3D3B52;
-    --input-bg-color: #373457;
-    --main-text-color: #fff;
-    --secondary-text-color: #6e6c7d;
-    --title-text-color: #F0F0F0;
-    --primary-ok: #56F966;
-}
+
 
 * {
     color: var(--main-text-color);
@@ -87,40 +79,12 @@ html {
 }
 
 
-#searchbar {
-    background: none;
-    height: 100%;
-    border: none;
-    font-size: 1rem;
-}
-
-#searchbar::placeholder {
-    color: var(--main-text-color);
-
-    /*text-align: right;*/
-    font-family: Hammersmith One, sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.search-container{
-    width: calc(100% );
-    background-color: var(--secondary-bg-color);
-    padding: 0.5rem 0;
-}
-
-.search-label {
-    background-color: var(--input-bg-color);
-    margin: 0.5rem 0.5rem;
-    padding: 0.25rem 1rem;
-    display: grid;
-    grid-template-columns: 1fr min-content;
-}
-
 .hidden {
     display: none !important;
+}
+
+img[alt="rechercher"]{
+    cursor: pointer;
 }
 
 button {

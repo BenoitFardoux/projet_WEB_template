@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="src/css/main.css"/>
     <link rel="stylesheet" href="src/css/menuBurger.css">
+    <link rel="stylesheet" href="src/css/searchBar.css">
     <script src="src/js/menu_burger.js"></script>
 
     <title>Template e-learning</title>
@@ -19,15 +20,21 @@
         <div>
             <img src="./src/assets/svg/profile_icon.svg" alt="icone de profil"/>
             <img src="./src/assets/svg/baskert_icon.svg" alt="logo de panier"/>
+            <img src="./src/assets/svg/search_icon.svg" alt="rechercher" onclick="openClickPopup()">
         </div>
     </div>
 </header>
-<div class="search-container ">
-    <label for="searchbar" class="search-label border">
-        <input id="searchbar" placeholder="faites une recherche"/>
-        <img src="./src/assets/svg/search_icon.svg" alt="icone de recherche" class="search-icon">
-    </label>
-</div>
+<dialog class="search-container empty-dialog" id="search-dialog" >
+    <div id="search-dialog-container">
+        <label for="searchbar" class="search-label border">
+            <input id="searchbar" placeholder="faites une recherche"/>
+            <img src="./src/assets/svg/search_icon.svg" alt="icone de recherche" class="search-icon">
+        </label>
+    </div>
+    <div id="search-result">
+
+    </div>
+</dialog>
 <div id="innerBurger" class="hidden"></div>
 <!-- TODO : modifier classe et carroussel par version fonctionnelle-->
 <img src="./src/assets/images/background_image.png" alt="">
@@ -109,3 +116,4 @@
 </main>
 </body>
 </html>
+<script src="src/js/searchbar.js"></script>
