@@ -1,0 +1,50 @@
+
+.burger-category{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid black;
+}
+
+
+#innerBurger{
+    position: fixed;
+    top: 5vh;
+    /*bottom: 100%;*/
+    width: 100vw;
+    background-color: #3e39d5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+}
+
+@keyframes slideOpen {
+    0%{
+        translate: -100%;
+    }
+
+    100%{
+        translate: 0;
+    }
+}
+
+@keyframes slideClose {
+    0% {
+        translate: 0;
+    }
+
+    100%{
+        translate: -100%;
+    }
+}
+
+.animateSlideOpen{
+    animation: slideOpen 1s cubic-bezier(.27,0,0,.95);
+}
+
+.animateSlideClose{
+    animation: slideClose 1s cubic-bezier(.27,0,0,.95);
+}
