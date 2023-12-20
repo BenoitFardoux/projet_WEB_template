@@ -63,6 +63,11 @@ header > div:nth-child(1) > div:nth-child(1) {
     display: flex;
 }
 
+header > div >div> img, header>div>aside>img{
+    height: 30px;
+    width: 30px;
+}
+
 input::-moz-focus-outer {
     border: 0;
 }
