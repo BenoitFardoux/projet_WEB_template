@@ -83,6 +83,10 @@ html {
     display: none !important;
 }
 
+img[alt="rechercher"]{
+    cursor: pointer;
+}
+
 button {
     background-color: var(--secondary-bg-color);
     border: none;
