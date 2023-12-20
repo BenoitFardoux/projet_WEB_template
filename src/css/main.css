@@ -262,6 +262,11 @@ main{
     margin: 0.2rem;
 }
 
+#caroussel{
+    margin-left: 50%;
+    margin-right: 50%
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"]{

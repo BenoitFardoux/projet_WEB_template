@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#carousel-slides{
+    position: relative;
+    width: 100vw;
+    height: 30vw;
+    overflow: hidden;
+}
+
+.slide{
+    position: absolute;
+    list-style-type: none;
+
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: left 0.4s cubic-bezier(.2,0,.4,1), filter 0.4s cubic-bezier(.2,0,.4,1);
+}
+
+.disable{
+    left: calc(100vw + 16px);
+    filter: blur(8px);
+}
+
+.fast-enable{
+    transition: none;
+    left: 0px;
+}
+
+.fast-disable{
+    transition: left 0.01s;
+    left: 100vw;
+}
+
+.top{
+    z-index: 2;
+}
+
+.slide-title{
+    color: white;
+    text-shadow: 2px 2px 2px #000A;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 40px;
+}
+
+.carousel{
+    position: relative;
+}
+
+.carousel-leftbutton{
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    top: 0;
+}
+
+.carousel-rightbutton{
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    top: 0;
+    right:0;
+}
