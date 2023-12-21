@@ -35,6 +35,8 @@ header {
     top : 0;
     background-color: var(--main-bg-color);
     width: 100%;
+    -webkit-box-shadow: 0px 3px 15px 5px #26243c;
+    box-shadow: 0px 3px 15px 5px #26243c;
 }
 header button{
     padding : 0;
@@ -89,7 +91,11 @@ html {
 img[alt="rechercher"]{
     cursor: pointer;
 }
-
+header a {
+    display: contents;
+    height: fit-content ;
+    width: fit-content;
+}
 button {
     background-color: var(--secondary-bg-color);
     border: none;
