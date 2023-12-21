@@ -1,0 +1,38 @@
+.centered-main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.link{
+  text-decoration: underline;
+}
+
+.link:hover{
+  cursor: pointer;
+}
+
+.link-button{
+  border: 2px solid var(--main-text-color);
+  border-radius: 16px;
+  background-color: var(--secondary-bg-color);
+  padding: 0.5rem;
+}
+
+.link-button:hover{
+  background-color: var(--input-bg-color);
+  cursor: pointer;
+}
+
+.icon{
+  background-color: var(--secondary-bg-color); 
+  border-radius: 100%;
+}

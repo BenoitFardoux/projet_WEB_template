@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/compte.css" />
+    <script src="../js/menu_burger.js"></script>
+
+    <title>Compte</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div>
+          <img
+            src="../assets/svg/burger_menu.svg"
+            alt="menu burger"
+            id="menu_burger"
+          />
+          <h1>Nom du site</h1>
+        </div>
+        <div>
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
+        </div>
+      </div>
+      <aside id="innerBurger" class="hidden">
+        <!-- TODO : implementer interieur du menu sandwich  -->
+        lorem ipsum dolor sit amet
+      </aside>
+      <div class="search-container">
+        <label for="searchbar" class="search-label border">
+          <input id="searchbar" placeholder="faites une recherche" />
+          <img
+            src="../assets/svg/search_icon.svg"
+            alt="icone de recherche"
+            class="search-icon"
+          />
+        </label>
+      </div>
+    </header>
+    <main class="centered-main">
+      <!--Icone utilisateur-->
+      <div class="account-group">
+        <img
+          src="../assets/svg/profile_icon.svg"
+          alt="icone de profil"
+          style="width: 100px; height: 100px"
+          class="icon"
+        />
+      </div>
+
+      <div class="account-group">
+        <h2>Nom</h2>
+        <div>Leroux</div>
+      </div>
+
+      <div class="account-group">
+        <h2>Prénom</h2>
+        <div>Valentin</div>
+      </div>
+
+      <div class="account-group">
+        <h2>Option</h2>
+        <a class="link">Accéder aux cours acheté</a>
+      </div>
+
+      <div class="account-group">
+        <a class="link-button"> Déconnection</a>
+      </div>
+    </main>
+  </body>
+</html>
