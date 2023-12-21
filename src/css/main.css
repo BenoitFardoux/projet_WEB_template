@@ -291,6 +291,7 @@ input[type="email"]{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    border-radius: 12px;
 }
 
 .checkbox-container input[type="checkbox"] {
@@ -308,6 +309,7 @@ input[type="email"]{
     height: 25px;
     width: 25px;
     background-color: #eee;
+    border-radius: 4px;
 }
 
 .checkbox-container:hover input~.checkmark {
@@ -338,6 +340,7 @@ input[type="email"]{
     --webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    
 }
 
 .checkbox-container:has(input:focus) .checkmark

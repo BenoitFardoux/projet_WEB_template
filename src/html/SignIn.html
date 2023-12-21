@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/signOn.css" />
+    <script src="../js/menu_burger.js"></script>
+
+    <title>Sign On</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div>
+          <img
+            src="../assets/svg/burger_menu.svg"
+            alt="menu burger"
+            id="menu_burger"
+          />
+          <h1>Nom du site</h1>
+        </div>
+        <div>
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
+        </div>
+      </div>
+      <aside id="innerBurger" class="hidden">
+        <!-- TODO : implementer interieur du menu sandwich  -->
+        lorem ipsum dolor sit amet
+      </aside>
+      <div class="search-container">
+        <label for="searchbar" class="search-label border">
+          <input id="searchbar" placeholder="faites une recherche" />
+          <img
+            src="../assets/svg/search_icon.svg"
+            alt="icone de recherche"
+            class="search-icon"
+          />
+        </label>
+      </div>
+    </header>
+    <main>
+      <form
+        action="../../index.html"
+        method="post"
+        class="sign_on-form"
+        id="sign_on"
+      >
+        <label for="email" class="sign_on-label">
+          email:
+          <input
+            name="email"
+            type="email"
+            class="border"
+            pattern=".+@.+\..{2,3}$"
+            placeholder="john.doe@email.com"
+            required
+          />
+        </label>
+
+        <label for="password" class="sign_on-label">
+          password:
+          <input
+            name="password"
+            id="password"
+            type="password"
+            minlength="8"
+            class="border"
+            placeholder="password"
+            pattern=".*((\d.*[A-Z])|([A-Z].*\d)).*"
+            title="Need an uppercase and a digit"
+            required
+          />
+          <label class="sign_on-checkbox-label">
+            show password
+            <span class="checkbox-container">
+              <input type="checkbox" oninput="showPassword()" />
+              <span class="checkmark"></span>
+            </span>
+          </label>
+        </label>
+        <label for="submit" class="sign_on-label label-center">
+          <button name="submit" type="submit" class="border form-button">
+            submit
+          </button>
+        </label>
+      </form>
+    </main>
+  </body>
+</html>
