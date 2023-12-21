@@ -36,8 +36,9 @@ header {
     background-color: var(--main-bg-color);
     width: 100%;
 }
-aside{
-    margin-left: 0.5rem;
+header button{
+    padding : 0;
+    background:none;
     align-self: center;
 }
 
@@ -56,7 +57,7 @@ header > div:nth-child(1) > div:nth-child(1) {
     display: flex;
 }
 
-header > div >div> img, header>div>aside>img{
+header img{
     height: 30px;
     width: 30px;
     margin-right: 0.5rem;
@@ -97,7 +98,9 @@ button {
 #menu_burger:hover {
     cursor: pointer;
 }
-
+#menu_burger{
+    margin-left: 0.5rem;
+}
 .border {
     border: 2px solid var(--main-text-color);
     border-radius: 8px;
