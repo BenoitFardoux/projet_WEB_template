@@ -11,8 +11,7 @@
 
 #innerBurger{
     position: fixed;
-    top: 7vh;
-    /*bottom: 100%;*/
+
     width: 100vw;
     background-color: #3e39d5;
     overflow: hidden;

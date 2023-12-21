@@ -39,7 +39,10 @@
     display: grid;
     grid-template-columns: 1fr min-content;
 }
-
+#search-result{
+    display: flex;
+    flex-direction: column;
+}
 
 ::backdrop {
     background-color: black;

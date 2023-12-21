@@ -13,18 +13,25 @@
 <body>
 <header>
     <div>
-        <aside id="menu_burger">
+        <button id="menu_burger">
             <img src="./src/assets/svg/burger_menu.svg" alt="menu burger">
-        </aside>
+        </button>
         <h1>Nom du site</h1>
         <div>
-            <img src="./src/assets/svg/profile_icon.svg" alt="icone de profil"/>
-            <img src="./src/assets/svg/baskert_icon.svg" alt="logo de panier"/>
-            <img src="./src/assets/svg/search_icon.svg" alt="rechercher" onclick="openClickPopup()">
+            <button>
+
+                <img src="./src/assets/svg/profile_icon.svg" alt="icone de profil"/>
+            </button>
+            <button>
+                <img src="./src/assets/svg/baskert_icon.svg" alt="logo de panier"/>
+            </button>
+            <button onclick="openClickPopup()">
+                <img src="./src/assets/svg/search_icon.svg" alt="rechercher">
+            </button>
         </div>
     </div>
 </header>
-<dialog class="search-container empty-dialog" id="search-dialog" >
+<dialog class="search-container empty-dialog" id="search-dialog">
     <div id="search-dialog-container">
         <label for="searchbar" class="search-label border">
             <input id="searchbar" placeholder="faites une recherche"/>
@@ -37,8 +44,8 @@
 </dialog>
 <div id="innerBurger" class="hidden"></div>
 <!-- TODO : modifier classe et carroussel par version fonctionnelle-->
-<img src="./src/assets/images/background_image.png" alt="">
-<main id="body">
+<main>
+    <img src="./src/assets/images/background_image.png" alt="">
     <div class="category">
         <div class="category_name">
             Continuer
