@@ -1,6 +1,6 @@
 /*noinspection CssUnknownTarget*/
 @import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
-
+@import "variables.css";
 body {
     margin: 0;
     width: 100%;
@@ -9,15 +9,7 @@ body {
 /*
     color variables
  */
-* {
-    --main-bg-color: #282735;
-    --secondary-bg-color: #3D3B52;
-    --input-bg-color: #373457;
-    --main-text-color: #fff;
-    --secondary-text-color: #6e6c7d;
-    --title-text-color: #F0F0F0;
-    --primary-ok: #56F966;
-}
+
 
 * {
     color: var(--main-text-color);
@@ -32,10 +24,10 @@ h1 {
     line-height: normal;
 }
 
+
+
 header {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,14 +36,16 @@ header {
     background-color: var(--main-bg-color);
     width: 100%;
 }
-
-
-aside{
+header button{
+    padding : 0;
+    background:none;
     align-self: center;
 }
 
 
 header > div:nth-child(1) {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
     display: flex;
     align-items: center;
     width: 100%;
@@ -63,9 +57,10 @@ header > div:nth-child(1) > div:nth-child(1) {
     display: flex;
 }
 
-header > div >div> img, header>div>aside>img{
+header img{
     height: 30px;
     width: 30px;
+    margin-right: 0.5rem;
 }
 
 input::-moz-focus-outer {
@@ -87,40 +82,12 @@ html {
 }
 
 
-#searchbar {
-    background: none;
-    height: 100%;
-    border: none;
-    font-size: 1rem;
-}
-
-#searchbar::placeholder {
-    color: var(--main-text-color);
-
-    /*text-align: right;*/
-    font-family: Hammersmith One, sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.search-container{
-    width: calc(100% );
-    background-color: var(--secondary-bg-color);
-    padding: 0.5rem 0;
-}
-
-.search-label {
-    background-color: var(--input-bg-color);
-    margin: 0.5rem 0.5rem;
-    padding: 0.25rem 1rem;
-    display: grid;
-    grid-template-columns: 1fr min-content;
-}
-
 .hidden {
     display: none !important;
+}
+
+img[alt="rechercher"]{
+    cursor: pointer;
 }
 
 button {
@@ -131,7 +98,9 @@ button {
 #menu_burger:hover {
     cursor: pointer;
 }
-
+#menu_burger{
+    margin-left: 0.5rem;
+}
 .border {
     border: 2px solid var(--main-text-color);
     border-radius: 8px;
@@ -141,14 +110,16 @@ img {
     max-width: 100vw;
 }
 
-#body {
-    margin-left: 1.5rem;
+main{
+    display: flex;
+    flex-direction: column;
 }
 
 /**
 only for the category container and content
  */
 .category {
+    margin-left: 1.5rem;
     overflow: hidden;
 }
 
@@ -343,6 +314,7 @@ input[type="email"]{
     
 }
 
+
 .checkbox-container:has(input:focus) .checkmark
 {
     outline: 2px solid #94FFF8;
@@ -351,4 +323,7 @@ input[type="email"]{
 input:focus,
 button:focus {
     border: solid 2px #94FFF8;
+  
+.column-flex {
+    flex-direction: column;
 }

@@ -1,0 +1,75 @@
+ul {
+  padding: 0;
+}
+
+.lesson {
+  display: grid;
+  grid-template-rows: auto auto;
+  height: auto;
+}
+
+.lesson > aside {
+  width: 100%;
+  height: 10rem;
+}
+
+.lesson > img, .lesson > video{
+  width: 100%;
+  height: inherit;
+  object-fit: contain;
+  object-position: center;
+  background-color: black;
+}
+
+.lesson-chapter{
+  height: 100%;
+  background-color: var(--secondary-bg-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.chapter-group{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-group > li{
+  list-style-type: none;
+  text-align: center;
+  padding: 5px 0;
+  border: solid 2px var(--main-bg-color);
+}
+
+.chapter-group > li:hover{
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .lesson {
+    grid-template-columns: 70% 30%;
+    grid-template-rows: none;
+    height: 40vw;
+  }
+
+  .lesson>aside {
+    height: 100%;
+  }
+}
+
+#content{
+  padding: 0 1rem;
+}
+
+#content > article > h1{
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+  margin: 1.5rem 1rem;
+  border-bottom: solid 3px var(--secondary-bg-color);
+}
+
+#content > article > p{
+  
+}

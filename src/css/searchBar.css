@@ -1,0 +1,90 @@
+@import "variables.css";
+
+#search-dialog {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#searchbar {
+    background: none;
+    height: 100%;
+    border: none;
+    font-size: 1rem;
+}
+
+#searchbar::placeholder {
+    color: var(--main-text-color);
+
+    /*text-align: right;*/
+    font-family: Hammersmith One, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.search-container {
+    width: calc(100%);
+    background-color: transparent;
+    padding: 0;
+    border: none
+}
+
+.search-label {
+    background-color: var(--input-bg-color);
+    /*margin: 0.5rem 0.5rem;*/
+    padding: 0.25rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr min-content;
+}
+#search-result{
+    display: flex;
+    flex-direction: column;
+}
+
+::backdrop {
+    background-color: black;
+    opacity: 60%;
+    width: 100%;
+    height: 100%;
+}
+
+.empty-dialog {
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.writing-dialog {
+    top: 20%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes onStartWriting {
+    0% {
+        top: 50%;
+    }
+    100% {
+        top:20%;
+
+    }
+}
+
+@keyframes onStopWriting {
+    0% {
+        top: 20%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.animateStartWriting{
+    animation: onStartWriting 1s cubic-bezier(.27,0,0,.95) ;
+}
+
+.animateStopWriting{
+    animation : onStopWriting 1s cubic-bezier(.27,0,0,.95);
+}
