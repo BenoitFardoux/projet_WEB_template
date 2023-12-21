@@ -90,19 +90,27 @@ const deplacerLaBarreDeRecherchePlusBas = () => {
 // Fonction pour effacer les résultats précédents
 const clearSearchResults = () => {
     // Supprimer les résultats en dessous de la barre de recherche
-    const results = document.querySelectorAll("#search-result > div");
+    const results = document.querySelectorAll(".searchResult");
     results.forEach(result => result.remove());
 };
 
 // Fonction pour afficher les résultats de recherche sous la barre de recherche
 const displaySearchResults = () => {
-    searchResult.forEach((elt) => {
-        let resultElement = document.createElement("div");
-        resultElement.innerText = elt.title;
-        searchResultElement.appendChild(resultElement);
-        console.log(elt);
-    });
-
+    if (searchResult.length === 0){
+        console.log("ici")
+        let aucunResultat = document.createElement("div")
+        aucunResultat.innerText = "Aucun résultat"
+        aucunResultat.classList.add('searchResult')
+        searchResultElement.appendChild(aucunResultat)
+    } else {
+        searchResult.forEach((elt) => {
+            let resultElement = document.createElement("a");
+            resultElement.innerText = elt.title;
+            resultElement.href = elt.link
+            resultElement.classList.add('searchResult')
+            searchResultElement.appendChild(resultElement);
+            });
+    }
     // Animer la barre de recherche vers le haut si elle n'est pas déjà en haut
     if (!isUp && !animationEnCours) {
         animationEnCours = true;
