@@ -20,10 +20,10 @@
       </button>
       <h1>Nom du site</h1>
       <div>
-        <a href="../html/SignIn.html">
+        <a href="./SignIn.html">
           <img src="../assets/svg/profile_icon.svg" alt="icone de profil"/>
         </a>
-        <a href="../html/Panier.html">
+        <a href="./Panier.html">
           <img src="../assets/svg/baskert_icon.svg" alt="logo de panier"/>
         </a>
         <button onclick="openClickPopup()">
@@ -45,8 +45,10 @@
   </dialog>
   <div id="innerBurger" class="hidden">
     <a href="../../index.html"> retour au menu</a>
+    <a href="./quiz.html"> Quizz </a>
   </div>
-    <main>
+
+  <main>
       <form
         action="../../index.html"
         method="post"
@@ -56,6 +58,7 @@
         <label for="username" class="sign_on-label">
           username:
           <input
+                  id = "username"
             name="username"
             type="text"
             class="border"
@@ -68,6 +71,7 @@
           <label for="firstName" class="sign_on-label">
             first name:
             <input
+                    id = "firstName"
               name="firstName"
               type="text"
               class="border"
@@ -79,6 +83,7 @@
           <label for="lastName" class="sign_on-label">
             last name:
             <input
+                    id = lastName
               name="lastName"
               type="text"
               class="border"
@@ -91,6 +96,7 @@
         <label for="email" class="sign_on-label">
           email:
           <input
+                  id="email"
             name="email"
             type="email"
             class="border"
@@ -122,7 +128,7 @@
           </label>
         </label>
         <label for="submit" class="sign_on-label label-center">
-          <button name="submit" type="submit" class="border form-button">
+          <button id="submit" name="submit" type="submit" class="border form-button">
             submit
           </button>
         </label>
