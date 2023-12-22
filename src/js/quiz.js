@@ -7,32 +7,36 @@
 
 
 const quizData = [
-    {
-        img: "../assets/images/pere.jpeg",
-        question: "Quelle est la <strong>capitale</strong> de la France?",
-        answers: {
-            a: "Paris",
-            b: "Londres",
-            c: "Berlin"
-        },
-        correctAnswer: "a",
-        explication: "around the world"
-    },
+  
     {
         img:'',
-        question: "Quelle est la plus grande planète du système solaire?",
+        descriptionImg: '',
+        question: "Placer votre question ici",
         answers: {
-            a: "Terre",
-            b: "Mars",
-            c: "Jupiter"
+            a: "choix N°1",
+            b: "choix N°2",
+            c: "choix N°3"
         },
         correctAnswer: "c", 
-        explication: "entrer votre code ici"
+        explication: "entrer vos explications ici"
         
+    },
+    {
+        img: "../assets/images/pere.jpeg",
+        descriptionImg: 'Photo d\'un homme rouge avec une barbe blanche',
+        question: " Exemple de question : Qui est la personne l'image ci-dessus ?",
+        answers: {
+            a: "Père-Noël",
+            b: "Réponse a",
+            c: "Réponse b"
+        },
+        correctAnswer: "a",
+        explication: "plus d'information sur le <a href='https://fr.wikipedia.org/wiki/P%C3%A8re_No%C3%ABl'> wikipedia du Père-Noël</a>"
     },
 
     {
         img: '',
+        descriptionImg: '',
         question: "Qu'est-ce que le <strong><abbr title='document object model'>DOM</abbr></strong> en JavaScript?",
         answers: {
             a: "Une bibliothèque de fonctions",
@@ -40,101 +44,10 @@ const quizData = [
             c: "Un langage de programmation"
         },
         correctAnswer: "b",
-        explication: "entrer les explications que vous voulez"
+        explication: "Pour en savoir plus, rendez vous sur le <a href='https://fr.wikipedia.org/wiki/Document_Object_Model' alt='vous allez ouvrir une nouvelle fenêtre' target='_blank' >wikipedia du DOM</a>"
     },
 
-    // {
-    //     question: "Comment sélectionnez-vous un élément par son ID en utilisant le DOM?",
-    //     answers: {
-    //         a: "document.getElementById('id')",
-    //         b: "document.getElement('id')",
-    //         c: "document.querySelector('#id')"
-    //     },
-    //     correctAnswer: "a"
-    // }, 
-
-    // {
-    //     question: "Quelle méthode <strong>ajoute </strong>un nouvel élément au DOM?",
-    //     answers: {
-    //         a: "document.createElement()",
-    //         b: "document.appendChild()",
-    //         c: "document.newElement()"
-    //     },
-    //     correctAnswer: "a"
-    // },
-
-    // {
-    //     question: "Comment pouvez-vous ajouter un <strong>écouteur d'événements</strong> à un élément dans le DOM?",
-    //     answers: {
-    //         a: "element.addEventListener('event', function)",
-    //         b: "element.onEvent('event', function)",
-    //         c: "element.event('event', function)"
-    //     },
-    //     correctAnswer: "a"
-    // },
-
-    // {
-    //     question: "Quelle propriété du DOM permet de <strong>modifier le contenu textuel </strong> d'un élément?",
-    //     answers: {
-    //         a: "textContent",
-    //         b: "innerHTML",
-    //         c: "innerText"
-    //     },
-    //     correctAnswer: "a"
-    // }, 
-
-    // {
-    //     question: "Quelle méthode est utilisée pour <strong>supprimer</strong> un élément du DOM?",
-    //     answers: {
-    //         a: "document.deleteElement()",
-    //         b: "element.removeChild()",
-    //         c: "element.remove()"
-    //     },
-    //     correctAnswer: "c"
-    // },
-
-    // {
-    //     question: "Comment <strong>changer le style d'un élément</strong> en utilisant le DOM?",
-    //     answers: {
-    //         a: "element.styles.set('color', 'red')",
-    //         b: "element.style.color = 'red'",
-    //         c: "element.setColor('red')"
-    //     },
-    //     correctAnswer: "b"
-    // },
-
-    // {
-    //     question: "Que représente <strong>'document' </stronger> dans le contexte du DOM?",
-    //     answers: {
-    //         a: "Le navigateur web actuel",
-    //         b: "L'objet racine du DOM",
-    //         c: "Une fonction JavaScript"
-    //     },
-    //     correctAnswer: "b"
-    // },
-
-    // {
-    //     question: "Quelle méthode permet de trouver tous les éléments qui correspondent à un sélecteur CSS donné?",
-    //     answers: {
-    //         a: "document.querySelector()",
-    //         b: "document.getElementById()",
-    //         c: "document.querySelectorAll()"
-    //     },
-    //     correctAnswer: "c"
-    // },
-
-    // {
-    //     question: "Quel est l'<stronger>objet parent</stronger> de tous les objets dans le DOM?",
-    //     answers: {
-    //         a: "window",
-    //         b: "document",
-    //         c: "HTMLDocument"
-    //     },
-    //     correctAnswer: "a"
-    // },    
-         
     
-    // Ajoutez plus de questions ici
 ];
 
 
@@ -163,6 +76,8 @@ function buildQuiz() {
             let img_question = document.createElement('img');
             img_question.innerHTML = `${questionData.img}`;
             img_question.setAttribute('src', `${questionData.img}`)
+            img_question.setAttribute('alt', `${questionData.descriptionImg}`)
+            img_question.setAttribute('aria-label', 'description de l\'image')
             img_question.classList.add('tailleQuestion');
             questionElement.appendChild(img_question);
         }
@@ -265,19 +180,27 @@ function showResults() {
 
         let container = document.getElementById('question-container');
 
-        for(i = 0; i <= container.childElementCount; i++){
+        for(i = 0; i <= container.childElementCount - 1; i++){
             let description = document.createElement('p');
             // let question = container.querySelector('div');
             let question = container.children[i];
             console.log(question);
 
-            description.textContent = quizData[i].explication;
+            description.innerHTML = "Bonne réponse : " + quizData[i].correctAnswer + "<br> Explication : <br>" + quizData[i].explication;
 
             question.appendChild(description);
 
         }
 
-        //ajouter le détail des réponses
+        let quiz = document.getElementById('quiz-container')
+        const redirection_a = document.createElement('a')
+        const redirection = document.createElement('button');
+        redirection_a.setAttribute('href', '../../index.html');
+        redirection_a.textContent = "acceuil";
+
+        redirection.appendChild(redirection_a);
+        quiz.appendChild(redirection);
+        
 
     }
 }
@@ -287,30 +210,27 @@ buildQuiz();
 submitButton.addEventListener('click', showResults);
 
 
-function st(){
-    let quiz = document.getElementById('quiz-container')
-    quiz.style.background = 'red';
-    console.log("fonctionne");
-}
-
-document.getElementById("contraste").addEventListener("click", st);
-
-
-    const selectElement = document.getElementById('selection');
+const selectElement = document.getElementById('selection');
     
-    selectElement.addEventListener('change', (event) => {
-        let quiz = document.getElementById('quiz-container')
-        const valeurSelectionnee = selectElement.value;
-        console.log(valeurSelectionnee);
-        if(valeurSelectionnee == 'color1'){
-            quiz.style.background = 'yellow';
-            console.log("touch")
-        }else if(valeurSelectionnee == 'color2'){
-            
-            quiz.style.background = 'red';
-            
-        }else{
-            console.log('aucune selection');
-        }
-        console.log('Option sélectionnée:', valeurSelectionnee);
-    });
+selectElement.addEventListener('change', (event) => {
+    
+    let quiz = document.getElementById('quiz-container')
+    const valeurSelectionnee = selectElement.value;
+    console.log(valeurSelectionnee);
+    if(valeurSelectionnee == 'daltonien'){
+
+        quiz.style.background = '#07239C';
+        quiz.style.color = '#fff';
+    }else if(valeurSelectionnee == 'santa'){
+        
+        quiz.style.background = 'red';
+        
+        
+    }else if(valeurSelectionnee == 'Achromatopsie'){
+        quiz.style.background = '#222222';
+    }else{
+        
+        console.log('aucune selection');
+    }
+    console.log('Option sélectionnée:', valeurSelectionnee);
+});

@@ -91,3 +91,12 @@ body {
     height: 50px;
     display: block;
 }
+
+#selection{
+    color: #6e6c7d;
+}
+
+#selection option{
+    color: #6e6c7d;
+}
+
