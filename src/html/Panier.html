@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/Panier.css" />
+    <script src="../js/menu_burger.js"></script>
+
+    <title>Compte</title>
+  </head>
+  <body>
+    <header>
+      <div>
+        <div>
+          <img
+            src="../assets/svg/burger_menu.svg"
+            alt="menu burger"
+            id="menu_burger"
+          />
+          <h1>Nom du site</h1>
+        </div>
+        <div>
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
+        </div>
+      </div>
+      <aside id="innerBurger" class="hidden">
+        <!-- TODO : implementer interieur du menu sandwich  -->
+        lorem ipsum dolor sit amet
+      </aside>
+      <div class="search-container">
+        <label for="searchbar" class="search-label border">
+          <input id="searchbar" placeholder="faites une recherche" />
+          <img
+            src="../assets/svg/search_icon.svg"
+            alt="icone de recherche"
+            class="search-icon"
+          />
+        </label>
+      </div>
+    </header>
+    <main class="centered-main">
+      <h1 class="title">Panier</h1>
+      <section class="resume-product">
+        <div class="product-list border">
+          <div class="product">
+            <div class="product-information">
+              <h2>Product Name</h2>
+              <p>product description</p>
+            </div>
+            <div>100€</div>
+          </div>
+
+          <div class="product">
+            <div class="product-information">
+              <h2>Product Name</h2>
+              <p>product description</p>
+            </div>
+            <div>100€</div>
+          </div>
+        </div>
+        <aside class="total border">
+          <h2>total</h2>
+          <div>200€</div>
+          <button class="border buy-button">acheté</button>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>

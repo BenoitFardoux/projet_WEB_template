@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   padding: 0;
 }
@@ -63,13 +67,10 @@ ul {
   padding: 0 1rem;
 }
 
+
 #content > article > h1{
   font-size: 2.5rem;
   padding: 0.5rem 0;
   margin: 1.5rem 1rem;
   border-bottom: solid 3px var(--secondary-bg-color);
-}
-
-#content > article > p{
-  
 }
