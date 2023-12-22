@@ -1,0 +1,56 @@
+main {
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.title{
+  font-size: 3rem;
+}
+
+.resume-product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  width: 80vw;
+}
+
+.product-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+}
+
+aside.total{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  padding: 1rem;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+
+.product{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.buy-button{
+  padding: 0.5rem;
+}
+
+@media (min-width: 650px) {
+  .resume-product{
+    flex-direction: row;
+  }
+}

@@ -136,7 +136,7 @@ only for the category container and content
 .category_content {
     display: flex;
     /*white-space: nowrap;*/
-    overflow: auto;
+    overflow-x: auto;
     height: 14.5rem;
     flex-wrap: wrap;
     flex-direction: column;
@@ -218,6 +218,10 @@ only for the category container and content
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.buy-curse:hover{
+    scale: 1.2;
 }
 
 main{
@@ -323,7 +327,9 @@ input[type="email"]{
 input:focus,
 button:focus {
     border: solid 2px #94FFF8;
-  
+}  
+
 .column-flex {
     flex-direction: column;
 }
+
