@@ -323,7 +323,7 @@ input[type="email"]{
 input:focus,
 button:focus {
     border: solid 2px #94FFF8;
-  
+}
 .column-flex {
     flex-direction: column;
 }

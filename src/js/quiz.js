@@ -84,13 +84,24 @@ function buildQuiz() {
         questionElement.appendChild(questionText);
         
         // console.log("mon image" + img_question);
+        
+        // console.log("mon image" + img_question);
 
 
+        let number = 1;
         let number = 1;
         // Création des réponses au quiz en btn radio 
         for (const option in questionData.answers) {
 
+
             const optionLabel = document.createElement('label');
+            optionLabel.setAttribute('for', `questionElement${number}`);                                              
+
+                optionLabel.innerHTML = `
+                    <input type="radio" name="question${questionIndex}" id="questionElement${number}"  value="${option}" aria-labelledby="question${questionIndex}">
+                    ${option}: ${questionData.answers[option]}  
+                `;
+            
             optionLabel.setAttribute('for', `questionElement${number}`);                                              
 
                 optionLabel.innerHTML = `
@@ -103,7 +114,9 @@ function buildQuiz() {
             // questionData.answers[a] = Paris ------> dans notre premier objet le 'a' a pour valeur 'Paris'
             questionElement.appendChild(optionLabel);
             number++;
+            number++;
         }
+        
         
 
         quizContainer.appendChild(questionElement);
@@ -113,6 +126,8 @@ function buildQuiz() {
 function showResults() {
     const answerContainers = quizContainer.querySelectorAll('.question');
     let score = 0;
+    let manque = false;
+    let tab = [];
     let manque = false;
     let tab = [];
     quizData.forEach((questionData, questionIndex) => {
@@ -146,6 +161,11 @@ function showResults() {
             manque = true; 
             tab.push(questionIndex);
         }
+        if(answerContainer.querySelector(selector) == null){
+            
+            manque = true; 
+            tab.push(questionIndex);
+        }
         // console.log(answerContainer.querySelector(selector) ); ---> ensuite on vient récupérer la value 
         // de notre réponse que l'on a coché ===> en gros là c'est l'assemblage de nos deux explications juste au 
         // dessus, on récupère la question avec ces enfants qui sont composés de <label> et d'<input> de type radio 
@@ -158,6 +178,23 @@ function showResults() {
             score++;
         }
     });
+
+    if(manque){
+        console.log('il manque une question à cocher');
+        let message_manquant = document.getElementById('message_incomplet');
+        console.log(message_manquant);
+        message_manquant.style.display = 'block';
+
+        tab.forEach((element, index)=>{
+
+            let select_question = document.getElementById('question-container');            
+            let question_plus = select_question.children[element];            
+            
+            let color_p_question = question_plus.querySelector('p');            
+            color_p_question.style.color = 'blue';
+        });
+       
+    }else{
 
     if(manque){
         console.log('il manque une question à cocher');
@@ -208,6 +245,34 @@ function showResults() {
 buildQuiz();
 
 submitButton.addEventListener('click', showResults);
+
+
+
+const selectElement = document.getElementById('selection');
+    
+selectElement.addEventListener('change', (event) => {
+    
+    let quiz = document.getElementById('quiz-container')
+    const valeurSelectionnee = selectElement.value;
+    console.log(valeurSelectionnee);
+    if(valeurSelectionnee == 'daltonien'){
+
+        quiz.style.background = '#07239C';
+        quiz.style.color = '#fff';
+    }else if(valeurSelectionnee == 'santa'){
+        
+        quiz.style.background = 'red';
+        
+        
+    }else if(valeurSelectionnee == 'Achromatopsie'){
+        quiz.style.background = '#222222';
+    }else{
+        
+        console.log('aucune selection');
+    }
+    console.log('Option sélectionnée:', valeurSelectionnee);
+});
+
 
 
 const selectElement = document.getElementById('selection');
