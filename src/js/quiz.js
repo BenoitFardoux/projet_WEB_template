@@ -69,18 +69,18 @@ function buildQuiz() {
         const questionText = document.createElement('p');
         questionText.innerHTML = `${questionIndex + 1}. ${questionData.question}`;
         questionText.setAttribute('id', 'question' + `${questionIndex}`)
-        //questionText.setAttribute('alt', `${questionData.question}`);
-        // if(questionData.img != ''){
+        questionText.setAttribute('alt', `${questionData.question}`);
+        if(questionData.img != ''){
 
-        //     let img_question = document.createElement('img');
-        //     img_question.innerHTML = `${questionData.img}`;
-        //     img_question.setAttribute('src', `${questionData.img}`)
-        //     img_question.setAttribute('alt', `${questionData.descriptionImg}`)
-        //     img_question.setAttribute('aria-label', 'description de l\'image')
-        //     img_question.classList.add('tailleQuestion');
-        //     questionElement.appendChild(img_question);
+            let img_question = document.createElement('img');
+            img_question.innerHTML = `${questionData.img}`;
+            img_question.setAttribute('src', `${questionData.img}`)
+            img_question.setAttribute('alt', `${questionData.descriptionImg}`)
+            img_question.setAttribute('aria-label', 'description de l\'image')
+            img_question.classList.add('tailleQuestion');
+            questionElement.appendChild(img_question);
 
-        // }
+        }
         questionElement.appendChild(questionText);       
         
         let number = 1;
@@ -97,16 +97,9 @@ function buildQuiz() {
                     ${option}: ${questionData.answers[option]}  
                 `;
             
-            optionLabel.setAttribute('for', `questionElement${number}`);                                              
+            optionLabel.setAttribute('for', `questionElement${number}`);                                             
 
-                // optionLabel.innerHTML = `
-                //     <input type="radio" name="question${questionIndex}" id="questionElement${number}"  value="${option}" aria-labelledby="question${questionIndex}">
-                //     ${option}: ${questionData.answers[option]}  
-                // `;
-            
-            // console.log(option); on récupère option qui représente nos a,b,c et ils vont aller chercher le nom de la réponse avec
-            //questionData.answers[option]  -----> ex : si mon option vaut a
-            // questionData.answers[a] = Paris ------> dans notre premier objet le 'a' a pour valeur 'Paris'
+              
             questionElement.appendChild(optionLabel);
             number++;
             
@@ -125,29 +118,9 @@ function showResults() {
     let manque = false;
     let tab = [];
     quizData.forEach((questionData, questionIndex) => {
-        const answerContainer = answerContainers[questionIndex];
-        // console.log(answerContainers[questionIndex]); ---> on récupère le parent 'question' pour ensuite 
-        // venir récuperer la valeur checked afin de savoir si notre réponse est bonne ou non
-        // <div class="question">
-        //  <p>1. Quelle est la capitale de la France?</p>
-        //  <label>            
-        //    <input type="radio" name="question0" value="a">
-        //     a: Paris
-        //  </label><label>
-        //     <input type="radio" name="question0" value="b">
-        //     b: Londres
-        //  </label><label>
-        //     <input type="radio" name="question0" value="c">
-        //     c: Berlin
-        //  </label></div>
+        const answerContainer = answerContainers[questionIndex];        
 
-        const selector = `input[name=question${questionIndex}]:checked`;
-        // console.log(selector); -----> on récupère notre valeur cochée grâce à "question${questionIndex}" car
-        // rappelons nous que plus tôt dans le code on a créer nos labels et dedans nos input avec pour 
-        // propriété name = question${questionIndex}
-        // ---> en gros on vient récupérer le input de type radio qui a été coché parmis tout ces derniers
-        // par exemple si on a coché 'a', le selector va identifier : 
-        //    <input type="radio" name="question0" value="a">
+        const selector = `input[name=question${questionIndex}]:checked`;        
         
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
         if(answerContainer.querySelector(selector) == null){
@@ -159,13 +132,7 @@ function showResults() {
             
             manque = true; 
             tab.push(questionIndex);
-        }
-        // console.log(answerContainer.querySelector(selector) ); ---> ensuite on vient récupérer la value 
-        // de notre réponse que l'on a coché ===> en gros là c'est l'assemblage de nos deux explications juste au 
-        // dessus, on récupère la question avec ces enfants qui sont composés de <label> et d'<input> de type radio 
-        // et pour finir avec le selector on crée le moyen de sélectionner le input qui a été coché par le user pour en récupérer 
-        // la value, dans notre cas le 'a' vaut 'Paris'
-
+        }       
         
         if (userAnswer === questionData.correctAnswer) {
            
@@ -271,25 +238,3 @@ selectElement.addEventListener('change', (event) => {
 
 
     
-// selectElement.addEventListener('change', (event) => {
-    
-//     let quiz = document.getElementById('quiz-container')
-//     const valeurSelectionnee = selectElement.value;
-//     console.log(valeurSelectionnee);
-//     if(valeurSelectionnee == 'daltonien'){
-
-//         quiz.style.background = '#07239C';
-//         quiz.style.color = '#fff';
-//     }else if(valeurSelectionnee == 'santa'){
-        
-//         quiz.style.background = 'red';
-        
-        
-//     }else if(valeurSelectionnee == 'Achromatopsie'){
-//         quiz.style.background = '#222222';
-//     }else{
-        
-//         console.log('aucune selection');
-//     }
-//     console.log('Option sélectionnée:', valeurSelectionnee);
-// });
