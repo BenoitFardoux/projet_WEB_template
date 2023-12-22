@@ -1,17 +1,9 @@
-
-
-
-// Création de tableaux et d'objets
-// Un cours qui m'a aidé à bien revoir les notions d'objets js :
-// https://www.pierre-giraud.com/javascript-apprendre-coder-cours/creation-objet-litteral/
-
-
 const quizData = [
   
     {
         img:'../assets/images/pere.jpeg',
         descriptionImg: '',
-        question: "Placer votre question ici",
+        question: "Placer la question ici",
         answers: {
             a: "choix N°1",
             b: "choix N°2",
@@ -141,9 +133,9 @@ function showResults() {
     });
 
     if(manque){
-        console.log('il manque une question à cocher');
+        
         let message_manquant = document.getElementById('message_incomplet');
-        console.log(message_manquant);
+        
         message_manquant.style.display = 'block';
 
         tab.forEach((element, index)=>{
@@ -158,15 +150,12 @@ function showResults() {
     }else{
 
     if(manque){
-        console.log('il manque une question à cocher');
-        let message_manquant = document.getElementById('message_incomplet');
-        console.log(message_manquant);
+        
+        let message_manquant = document.getElementById('message_incomplet');        
         message_manquant.style.display = 'block';
-
         tab.forEach((element, index)=>{
-
             let select_question = document.getElementById('question-container');            
-            let question_plus = select_question.children[element];            
+            let question_plus = select_question.children[element];           
             
             let color_p_question = question_plus.querySelector('p');            
             color_p_question.style.color = 'blue';
@@ -179,10 +168,8 @@ function showResults() {
         let container = document.getElementById('question-container');
 
         for(i = 0; i <= container.childElementCount - 1; i++){
-            let description = document.createElement('p');
-            // let question = container.querySelector('div');
-            let question = container.children[i];
-            console.log(question);
+            let description = document.createElement('p');            
+            let question = container.children[i];         
 
             description.innerHTML = "Bonne réponse : " + quizData[i].correctAnswer + "<br> Explication : <br>" + quizData[i].explication;
 
@@ -215,7 +202,7 @@ selectElement.addEventListener('change', (event) => {
     
     let quiz = document.getElementById('quiz-container')
     const valeurSelectionnee = selectElement.value;
-    console.log(valeurSelectionnee);
+    
     if(valeurSelectionnee == 'daltonien'){
 
         quiz.style.background = '#07239C';
@@ -229,9 +216,9 @@ selectElement.addEventListener('change', (event) => {
         quiz.style.background = '#222222';
     }else{
         
-        console.log('aucune selection');
+        console.log("aucun choix");
     }
-    console.log('Option sélectionnée:', valeurSelectionnee);
+    
 });
 
 
