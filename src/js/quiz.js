@@ -9,7 +9,7 @@
 const quizData = [
   
     {
-        img:'',
+        img:'../assets/images/pere.jpeg',
         descriptionImg: '',
         question: "Placer votre question ici",
         answers: {
@@ -62,8 +62,7 @@ const submitButton = document.getElementById('submit-button');
 function buildQuiz() {
     quizData.forEach((questionData, questionIndex) => {
 
-        // Création des questions au quiz
-        //console.log(questionData);   ------> on récupère tout les objets du tableau
+       
         const questionElement = document.createElement('div');
         questionElement.classList.add('question');
 
@@ -71,25 +70,21 @@ function buildQuiz() {
         questionText.innerHTML = `${questionIndex + 1}. ${questionData.question}`;
         questionText.setAttribute('id', 'question' + `${questionIndex}`)
         //questionText.setAttribute('alt', `${questionData.question}`);
-        if(questionData.img != ''){
+        // if(questionData.img != ''){
 
-            let img_question = document.createElement('img');
-            img_question.innerHTML = `${questionData.img}`;
-            img_question.setAttribute('src', `${questionData.img}`)
-            img_question.setAttribute('alt', `${questionData.descriptionImg}`)
-            img_question.setAttribute('aria-label', 'description de l\'image')
-            img_question.classList.add('tailleQuestion');
-            questionElement.appendChild(img_question);
-        }
-        questionElement.appendChild(questionText);
+        //     let img_question = document.createElement('img');
+        //     img_question.innerHTML = `${questionData.img}`;
+        //     img_question.setAttribute('src', `${questionData.img}`)
+        //     img_question.setAttribute('alt', `${questionData.descriptionImg}`)
+        //     img_question.setAttribute('aria-label', 'description de l\'image')
+        //     img_question.classList.add('tailleQuestion');
+        //     questionElement.appendChild(img_question);
+
+        // }
+        questionElement.appendChild(questionText);       
         
-        // console.log("mon image" + img_question);
+        let number = 1;
         
-        // console.log("mon image" + img_question);
-
-
-        let number = 1;
-        let number = 1;
         // Création des réponses au quiz en btn radio 
         for (const option in questionData.answers) {
 
@@ -104,17 +99,17 @@ function buildQuiz() {
             
             optionLabel.setAttribute('for', `questionElement${number}`);                                              
 
-                optionLabel.innerHTML = `
-                    <input type="radio" name="question${questionIndex}" id="questionElement${number}"  value="${option}" aria-labelledby="question${questionIndex}">
-                    ${option}: ${questionData.answers[option]}  
-                `;
+                // optionLabel.innerHTML = `
+                //     <input type="radio" name="question${questionIndex}" id="questionElement${number}"  value="${option}" aria-labelledby="question${questionIndex}">
+                //     ${option}: ${questionData.answers[option]}  
+                // `;
             
             // console.log(option); on récupère option qui représente nos a,b,c et ils vont aller chercher le nom de la réponse avec
             //questionData.answers[option]  -----> ex : si mon option vaut a
             // questionData.answers[a] = Paris ------> dans notre premier objet le 'a' a pour valeur 'Paris'
             questionElement.appendChild(optionLabel);
             number++;
-            number++;
+            
         }
         
         
@@ -126,8 +121,7 @@ function buildQuiz() {
 function showResults() {
     const answerContainers = quizContainer.querySelectorAll('.question');
     let score = 0;
-    let manque = false;
-    let tab = [];
+   
     let manque = false;
     let tab = [];
     quizData.forEach((questionData, questionIndex) => {
@@ -241,7 +235,7 @@ function showResults() {
 
     }
 }
-
+}
 buildQuiz();
 
 submitButton.addEventListener('click', showResults);
@@ -275,27 +269,27 @@ selectElement.addEventListener('change', (event) => {
 
 
 
-const selectElement = document.getElementById('selection');
-    
-selectElement.addEventListener('change', (event) => {
-    
-    let quiz = document.getElementById('quiz-container')
-    const valeurSelectionnee = selectElement.value;
-    console.log(valeurSelectionnee);
-    if(valeurSelectionnee == 'daltonien'){
 
-        quiz.style.background = '#07239C';
-        quiz.style.color = '#fff';
-    }else if(valeurSelectionnee == 'santa'){
+    
+// selectElement.addEventListener('change', (event) => {
+    
+//     let quiz = document.getElementById('quiz-container')
+//     const valeurSelectionnee = selectElement.value;
+//     console.log(valeurSelectionnee);
+//     if(valeurSelectionnee == 'daltonien'){
+
+//         quiz.style.background = '#07239C';
+//         quiz.style.color = '#fff';
+//     }else if(valeurSelectionnee == 'santa'){
         
-        quiz.style.background = 'red';
+//         quiz.style.background = 'red';
         
         
-    }else if(valeurSelectionnee == 'Achromatopsie'){
-        quiz.style.background = '#222222';
-    }else{
+//     }else if(valeurSelectionnee == 'Achromatopsie'){
+//         quiz.style.background = '#222222';
+//     }else{
         
-        console.log('aucune selection');
-    }
-    console.log('Option sélectionnée:', valeurSelectionnee);
-});
+//         console.log('aucune selection');
+//     }
+//     console.log('Option sélectionnée:', valeurSelectionnee);
+// });
