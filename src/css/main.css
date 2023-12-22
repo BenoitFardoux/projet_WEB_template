@@ -36,12 +36,15 @@ header {
     background-color: var(--main-bg-color);
     width: 100%;
 }
-header button{
+header button, header a{
     padding : 0;
     background:none;
+    text-decoration: none;
     align-self: center;
 }
-
+header button:focus{
+    border: 0;
+}
 
 header > div:nth-child(1) {
     padding-bottom: 0.5rem;
@@ -326,8 +329,10 @@ input[type="email"]{
 
 input:focus,
 button:focus {
-    border: solid 2px #94FFF8;
-}
+    border: solid 2px #6e6c7d;
+}  
+
+
 .column-flex {
     flex-direction: column;
 }
