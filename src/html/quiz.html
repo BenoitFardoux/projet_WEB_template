@@ -12,19 +12,40 @@
     <!-- @Arnaud Rein -->
 </head>
 <body>
-    <header>
+<header>
+    <div>
+        <button id="menu_burger">
+            <img src="../assets/svg/burger_menu.svg" alt="menu burger">
+        </button>
+        <h1>Nom du site</h1>
         <div>
-            <aside id="menu_burger">
-                <img src="../assets/svg/burger_menu.svg" alt="menu burger">
-            </aside>
-            <h1>Nom du site</h1>
-            <div>
+            <a href="./SignIn.html">
                 <img src="../assets/svg/profile_icon.svg" alt="icone de profil"/>
+            </a>
+            <a href="./Panier.html">
                 <img src="../assets/svg/baskert_icon.svg" alt="logo de panier"/>
+            </a>
+            <button onclick="openClickPopup()">
+                <img src="../assets/svg/search_icon.svg" alt="rechercher">
+            </button>
         </div>
     </div>
-    
 </header>
+<dialog class="search-container empty-dialog" id="search-dialog">
+    <div id="search-dialog-container">
+        <label for="searchbar" class="search-label border">
+            <input id="searchbar" placeholder="faites une recherche"/>
+            <img src="../assets/svg/search_icon.svg" alt="icone de recherche" class="search-icon">
+        </label>
+    </div>
+    <div id="search-result">
+
+    </div>
+</dialog>
+<div id="innerBurger" class="hidden">
+    <a href="../../index.html"> retour au menu</a>
+    <a href="./quiz.html"> Quizz </a>
+</div>
 
 <section>
     
