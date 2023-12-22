@@ -5,43 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/searchBar.css">
+    <link rel="stylesheet" href="../css/menuBurger.css">
     <link rel="stylesheet" href="../css/signOn.css" />
-    <script src="../js/menu_burger.js"></script>
     <script src="../js/signOn.js"></script>
 
     <title>Sign On</title>
   </head>
   <body>
-    <header>
+  <header>
+    <div>
+      <button id="menu_burger">
+        <img src="../assets/svg/burger_menu.svg" alt="menu burger">
+      </button>
+      <h1>Nom du site</h1>
       <div>
-        <div>
-          <img
-            src="../assets/svg/burger_menu.svg"
-            alt="menu burger"
-            id="menu_burger"
-          />
-          <h1>Nom du site</h1>
-        </div>
-        <div>
-          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
-          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
-        </div>
+        <a href="../html/SignIn.html">
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil"/>
+        </a>
+        <a href="../html/Panier.html">
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier"/>
+        </a>
+        <button onclick="openClickPopup()">
+          <img src="../assets/svg/search_icon.svg" alt="rechercher">
+        </button>
       </div>
-      <aside id="innerBurger" class="hidden">
-        <!-- TODO : implementer interieur du menu sandwich  -->
-        lorem ipsum dolor sit amet
-      </aside>
-      <div class="search-container">
-        <label for="searchbar" class="search-label border">
-          <input id="searchbar" placeholder="faites une recherche" />
-          <img
-            src="../assets/svg/search_icon.svg"
-            alt="icone de recherche"
-            class="search-icon"
-          />
-        </label>
-      </div>
-    </header>
+    </div>
+  </header>
+  <dialog class="search-container empty-dialog" id="search-dialog">
+    <div id="search-dialog-container">
+      <label for="searchbar" class="search-label border">
+        <input id="searchbar" placeholder="faites une recherche"/>
+        <img src="../assets/svg/search_icon.svg" alt="icone de recherche" class="search-icon">
+      </label>
+    </div>
+    <div id="search-result">
+
+    </div>
+  </dialog>
+  <div id="innerBurger" class="hidden">
+    <a href="../../index.html"> retour au menu</a>
+  </div>
     <main>
       <form
         action="../../index.html"
@@ -123,6 +127,12 @@
           </button>
         </label>
       </form>
+      <div>
+        vous avez déjà un compte ? <a href="./SignIn.html"> connectez vous</a>
+      </div>
+
     </main>
   </body>
 </html>
+<script src="../js/menu_burger.js"></script>
+<script src="../js/searchbar.js"></script>

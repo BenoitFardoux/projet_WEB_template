@@ -5,38 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/Cours.css" />
-    <script src="../js/menu_burger.js"></script>
+    <link rel="stylesheet" href="../css/menuBurger.css">
+    <link rel="stylesheet" href="../css/searchBar.css">
     <script src="../js/Cours.js"></script>
 
     <title>Template e-learning</title>
   </head>
   <body>
-    <header>
+  <header>
+    <div>
+      <button id="menu_burger">
+        <img src="../assets/svg/burger_menu.svg" alt="menu burger">
+      </button>
+      <h1>Nom du site</h1>
       <div>
-        <aside id="menu_burger">
-          <img src="../assets/svg/burger_menu.svg" alt="menu burger" />
-        </aside>
-        <h1>Nom du site</h1>
-        <div>
-          <img src="../assets/svg/profile_icon.svg" alt="icone de profil" />
-          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier" />
-        </div>
+        <button>
+
+          <img src="../assets/svg/profile_icon.svg" alt="icone de profil"/>
+        </button>
+        <button>
+          <img src="../assets/svg/baskert_icon.svg" alt="logo de panier"/>
+        </button>
+        <button onclick="openClickPopup()">
+          <img src="../assets/svg/search_icon.svg" alt="rechercher">
+        </button>
       </div>
-    </header>
-    <div class="search-container">
+    </div>
+  </header>
+  <dialog class="search-container empty-dialog" id="search-dialog">
+    <div id="search-dialog-container">
       <label for="searchbar" class="search-label border">
-        <input id="searchbar" placeholder="faites une recherche" />
-        <img
-          src="../assets/svg/search_icon.svg"
-          alt="icone de recherche"
-          class="search-icon"
-        />
+        <input id="searchbar" placeholder="faites une recherche"/>
+        <img src="../assets/svg/search_icon.svg" alt="icone de recherche" class="search-icon">
       </label>
     </div>
-    <div id="innerBurger" class="hidden"></div>
+    <div id="search-result"></div>
+  </dialog>
+  <div id="innerBurger" class="hidden"></div>
     <main class="column-flex">
       <section class="lesson">
-        <img src="../assets/images/background_image.png" />
+        <video controls>
+          <source src="../assets/video/placeholder.mp4">
+          <track src="../assets/video/subtitles/placeholder.srt" kind="subtitles" srclang="fr" label="Français">
+          <track src="../assets/video/subtitles/placeholder.srt" kind="subtitles" srclang="en" label="English">
+          Votre navigateur ne supporte pas les vidéos HTML5.
+
+        </video>
         <aside class="lesson-chapter">
           <ul class="chapter-group" id="chapter"></ul>
         </aside>
@@ -45,3 +59,7 @@
     </main>
   </body>
 </html>
+
+
+<script src="../js/menu_burger.js"></script>
+<script src="../js/searchbar.js"></script>
